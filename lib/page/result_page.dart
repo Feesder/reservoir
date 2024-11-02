@@ -61,7 +61,6 @@ class _ResultPageState extends State<ResultPage> {
   void initState() {
     super.initState();
     generateAnalysis();
-    Box<ResultDetail> gameBox = Provider.of<Box<ResultDetail>>(context);
     ResultDetail resultDetail = ResultDetail(
         rounds: this.rounds,
         volume: this.volume,
@@ -69,7 +68,6 @@ class _ResultPageState extends State<ResultPage> {
         sumPointsSecondPlayer: sumPointsSecondPlayer,
         time: DateTime.now()
     );
-    gameBox.put(0, resultDetail);
     MongoDB.insert(resultDetail);
   }
 

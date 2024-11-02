@@ -7,19 +7,9 @@ import 'model/result_detail.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Hive.initFlutter();
-  Hive.registerAdapter(ResultDetailAdapter());
-
-  final gameBox = await Hive.openBox<ResultDetail>('game_reuslt_box');
   await MongoDB.connect();
 
-  runApp(
-    Provider<Box<ResultDetail>>.value(
-      value: gameBox,
-      child: App(),
-    )
-  );
+  runApp(App());
 }
 
 class App extends StatelessWidget {
