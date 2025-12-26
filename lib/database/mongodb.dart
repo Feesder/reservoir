@@ -6,7 +6,7 @@ import 'package:reservoir/model/result_detail.dart';
 
 class MongoDB {
   static var db, resultCollection;
-  static final String URI = "mongodb+srv://qop6261:Nwtc3phHCirc3kLB@cluster.j8hhk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster";
+  static final String URI = "";
   static final String RESULT_CONNECTION = "results";
 
   static connect() async {
