@@ -1,16 +1,87 @@
-# reservoir
+# Reservoir - Flutter приложение
 
-A new Flutter project.
+## 📋 Описание
 
-## Getting Started
+**Reservoir** — это Flutter приложение для конкурса научных проектов "Дарын". Приложение было разработано на основе теории игр, в частности модели дилеммы заключённого, и использует её принципы для моделирования поведения пользователей, анализа стратегий взаимодействия и прогнозирования решений в условиях конфликта интересов и ограниченной информации.
 
-This project is a starting point for a Flutter application.
+## 📦 Зависимости
 
-A few resources to get you started if this is your first Flutter project:
+### Runtime Dependencies
+```yaml
+flutter:
+  sdk: flutter
+cupertino_icons: ^1.0.8          # iOS иконки
+http: ^1.2.2                     # HTTP клиент
+google_generative_ai: ^0.4.6     # Генеративный AI
+json_annotation: ^4.9.0          # JSON сериализация
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Dev Dependencies
+```yaml
+flutter_test:
+  sdk: flutter
+flutter_lints: ^4.0.0            # Линтинг правила
+json_serializable: ^6.8.0        # Сериализация JSON
+build_runner: ^2.4.13            # Генератор кода
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Установка и запуск
+
+### Требования
+
+- **Flutter SDK**:  ^3.5.0 или выше
+- **Dart**: 3.5.0 или выше
+- **Платформы**: iOS, Android (возможна поддержка Windows, macOS)
+
+### Установка
+
+```bash
+# 1. Клонируйте репозиторий
+git clone https://github.com/Feesder/reservoir.git
+cd reservoir
+
+# 2. Установите зависимости
+flutter pub get
+
+# 3. Запустите генератор кода (для Hive и JSON)
+flutter pub run build_runner build
+
+# 4. Запустите приложение
+flutter run
+```
+
+## 📁 Структура проекта
+
+```
+reservoir/
+├── lib/
+│   ├── main.dart                  # Точка входа приложения
+│   ├── database/
+│   │   └── mongodb. dart           # MongoDB конфигурация и подключение
+│   ├── page/
+│   │   └── intro_page.dart        # Первая страница приложения
+│   └── model/
+│       └── result_detail.dart     # Модель данных результата
+├── android/                        # Нативный код для Android
+├── ios/                            # Нативный код для iOS
+├── pubspec.yaml                    # Конфигурация пакета
+├── pubspec. lock                    # Зафиксированные версии зависимостей
+├── analysis_options.yaml           # Правила анализа кода
+└── README.md                       # Базовая документация
+```
+
+## 🚢 Сборка и развертывание
+
+### Android
+```bash
+flutter build apk
+# или для универсального бинарника
+flutter build appbundle
+```
+
+### iOS
+```bash
+flutter build ios
+# Откройте в Xcode
+open ios/Runner.xcworkspace
+```
